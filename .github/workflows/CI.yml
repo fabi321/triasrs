@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: rustup component add clippy
+    - uses: actions-rs/clippy-check@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        args: --all-features
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: rust-cargo
+      uses: actions-rs/cargo@v1.0.1
+      with:
+        command: build
+        args: --release --verbose
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: rust-cargo
+      uses: actions-rs/cargo@v1.0.1
+      with:
+        command: build
+        args: --release --verbose
+  macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: rust-cargo
+      uses: actions-rs/cargo@v1.0.1
+      with:
+        command: build
+        args: --release --verbose
