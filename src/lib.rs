@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 use chrono::Duration;
 
 pub use error::Error;

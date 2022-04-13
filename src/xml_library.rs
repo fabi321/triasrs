@@ -20,7 +20,7 @@ impl XMLLibrary {
                 .lock()
                 .await
                 .entry(name.clone())
-                .or_insert(Arc::new(Mutex::new(XMLDocument::new(name))))
+                .or_insert_with(|| Arc::new(Mutex::new(XMLDocument::new(name))))
                 .clone()
         };
         let mut unlocked_document = document.lock().await;

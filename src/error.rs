@@ -1,5 +1,4 @@
 use thiserror::Error;
-use reqwest;
 
 #[non_exhaustive]
 #[derive(Debug, Error)]

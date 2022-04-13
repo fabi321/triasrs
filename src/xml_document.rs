@@ -1,7 +1,6 @@
 use std::sync::Arc;
 
 use chrono::{DateTime, Utc};
-use reqwest;
 
 struct Document {
     document: Arc<String>,
@@ -24,7 +23,7 @@ impl XMLDocument {
                 self.document = None;
             }
         }
-        if let None = self.document {
+        if self.document.is_none() {
             let res = reqwest::get(&self.name).await?;
             let document = Arc::new(res.text().await?);
             self.document = Some(Document {
@@ -33,7 +32,7 @@ impl XMLDocument {
             });
         }
         if let Some(ref document) = self.document {
-            return Ok(document.document.clone());
+            Ok(document.document.clone())
         } else {
             unreachable!("It should not be possible")
         }
