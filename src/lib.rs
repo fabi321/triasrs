@@ -1,8 +1,11 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
+use chrono::Duration;
+
+pub use error::Error;
+
+mod xml_document;
+mod xml_library;
+mod error;
+
+pub struct API {
+    refresh_interval: Duration,
 }
