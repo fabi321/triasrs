@@ -23,7 +23,7 @@
                                 <StartTime>2019-10-14T01:30:00Z</StartTime>
                                 <EndTime>2500-12-30T23:00:00Z</EndTime>
                             </ValidityPeriod>
-                            <UnknownReason xmlns="http://www.siri.org.uk/siri">unknown</UnknownReason>
+                            <UnknownReason xmlns="http://www.siri.org.uk/siri">Unknown</UnknownReason>
                             <Priority xmlns="http://www.siri.org.uk/siri">3</Priority>
                             <Audience xmlns="http://www.siri.org.uk/siri">public</Audience>
                             <ScopeType xmlns="http://www.siri.org.uk/siri">line</ScopeType>
