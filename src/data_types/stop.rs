@@ -28,6 +28,7 @@ impl Stop {
     }
 }
 
+#[allow(unused_mut, unused_variables)]
 impl FromNode for Stop {
     fn from_node(from: Node) -> Option<Self> {
         #[cfg(debug)]

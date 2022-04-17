@@ -404,6 +404,6 @@ impl FromNode for TransportMode {
                 }
             }
         }
-        Some(TransportMode::new(primary_name?.as_str(), secondary_name.map(String::as_str)))
+        Some(TransportMode::new(primary_name?.as_str(), secondary_name.as_deref()))
     }
 }
