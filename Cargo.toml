@@ -11,3 +11,5 @@ chrono = "*"
 tokio = { version = "*", features = ["full"] }
 reqwest = "*"
 thiserror = "*"
+sxd-xpath = "0.4.2"
+sxd-document = "0.3.2"
